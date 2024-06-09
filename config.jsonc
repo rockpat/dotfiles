@@ -8,7 +8,6 @@
     "uptime",
     "packages",
     "shell",
-    "display",
     "de",
     "wm",
     "wmtheme",
@@ -19,8 +18,7 @@
     "gpu",
     "memory",
     "localip",
-    "battery",
-    "poweradapter",
+    "battery",,
     "break",
     "colors"
   ]
