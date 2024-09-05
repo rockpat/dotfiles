@@ -7,7 +7,7 @@ But yeah other that, I don't have anything of value to add besides automation & 
 
 # Documentation
 
-.bashrc - My almost (Unmodified) .bashrc
-.zshrc - My .zshrc config that I use
-fastfetch-autocompile - a little script to make compile fastfetch much easier
-config.jsonc - My (basic) fastfetch config
+.bashrc - My almost (Unmodified) .bashrc,
+.zshrc - My .zshrc config that I use,
+fastfetch-autocompile - a little script to make compile fastfetch much easier,
+config.jsonc - My (basic) fastfetch config,
