@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #-----------------------------------------------------------------------------------------------------
 #       ██╗ █████╗ ██╗  ██╗██╗   ██╗██████╗     ██╗    ██╗██╗███████╗██╗      ██████╗  ██████╗██╗  ██╗
 #       ██║██╔══██╗██║ ██╔╝██║   ██║██╔══██╗    ██║    ██║██║██╔════╝██║     ██╔═══██╗██╔════╝██║  ██║
@@ -6,40 +8,24 @@
 #  ╚█████╔╝██║  ██║██║  ██╗╚██████╔╝██████╔╝    ╚███╔███╔╝██║███████╗███████╗╚██████╔╝╚██████╗██║  ██║
 #   ╚════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝      ╚══╝╚══╝ ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝╚═╝  ╚═╝
 #-----------------------------------------------------------------------------------------------------
-# 						.zshrc
+# 				    Automated Fastfetch Compile script
 #-----------------------------------------------------------------------------------------------------
 
-# History + Vim Keybindings
-HISTFILE=~/.zsh_history
-HISTSIZE=99999
-SAVEHIST=99999
-bindkey -v
+#$fastfetch = 2.23.0
 
-# Basic auto/tab complete
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)	# Include hidden files
+# Download, Decompressing, Extracting & changing Directories
+#wget https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.23.0.tar.gz
+gunzip fastfetch-*.tar.gz
+tar -xf fastfetch-*.tar
+cd fastfetch-*/
 
-# PS1 / Terminal promt
-PS1=$'\033[36m%n\033[m@\033[32m%m:\033[33;1m%~\033[m\$ '
+# Compiling
+sudo cmake .
+sudo cmake --build . --target fastfetch --target flashfetch
 
-# Alias
-alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias la='ls -A'
-alias cp="cp -i"
-alias bat='batcat'
+# Replacing old fastfetch binary & man-page
+sudo mv fastfetch /usr/bin
+sudo mv flastfetch /usr/bin
+sudo mv fastfetch.1 /usr/share/man/man1
 
-# Editors / Export
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export MANPAGER="nvim +Man!"
-
-# Plugins
-source ~/.config/.zsh/plugins/zsh-autosuggestions.zsh
-#source ~/.config/.zsh/plugins/zsh-syntax-highlighting.plugin.zsh
-
-# Zoxide initialation
-eval "$(zoxide init zsh)"
+echo "Finished :-)"
