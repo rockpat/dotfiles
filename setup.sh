@@ -11,4 +11,10 @@
 # 					Dotfiles Install Script
 #-----------------------------------------------------------------------------------------------------
 
+# ZSH Shell Setup
+sudo apt install zsh zsh-autosuggestion zoxide bat nvim
+# Download zsh plugins
+ln -s ./.zshrc ~/.zshrc # make linking work
 
+# Fastfetch Symlink
+ln -s ./config.jsonc ~/.config/fastfetch/config.jsonc
