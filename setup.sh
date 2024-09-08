@@ -14,7 +14,9 @@
 # ZSH Shell Setup
 sudo apt install zsh zsh-autosuggestion zoxide bat nvim
 # Download zsh plugins
-ln -s ./.zshrc ~/.zshrc # make linking work
+# 
+ln -s $HOME/Github/Dotfiles/.zshrc $HOME/.zshrc
 
-# Fastfetch Symlink
-ln -s ./config.jsonc ~/.config/fastfetch/config.jsonc
+# Just Symlinks (Fastfetch, ViTetris, etc)
+ln -s $HOMR/Github/Dotfiles/config.jsonc $HOME/.config/fastfetch/config.jsonc
+ln -s $HOME/Github/Dotfiles/.vitetris $HOME/.vitetris
