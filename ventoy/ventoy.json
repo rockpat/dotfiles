@@ -1,0 +1,16 @@
+{
+    "theme": {
+        "file": "/ventoy/theme/ventoy-just-black/theme.txt",
+        "gfxmode": "1920x1080",
+        "display_mode": "GUI",
+        "serial_param": "--unit=0 --speed=9600",
+        "ventoy_left": "5%",
+        "ventoy_top": "95%",
+        "ventoy_color": "#0000ff",
+        "fonts": [
+            "/ventoy/theme/blur/Hack-12.pf2",
+            "/ventoy/theme/blur/Hack-14.pf2",
+            "/ventoy/theme/blur/Hack-16.pf2"
+        ]
+    }
+}
