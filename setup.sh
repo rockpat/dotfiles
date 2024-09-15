@@ -15,8 +15,8 @@
 sudo apt install zsh zsh-autosuggestion zoxide bat nvim
 # Download zsh plugins
 # 
-ln -s $HOME/Github/Dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
 
 # Just Symlinks (Fastfetch, ViTetris, etc)
-ln -s $HOMR/Github/Dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
-ln -s $HOME/Github/Dotfiles/.vitetris $HOME/.vitetris
+ln -s $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
+ln -s $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
