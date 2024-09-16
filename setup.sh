@@ -12,7 +12,7 @@
 #-----------------------------------------------------------------------------------------------------
 
 # ZSH Shell Setup
-sudo apt install zsh zsh-autosuggestion zoxide bat nvim
+sudo apt install zsh zoxide bat neovim
 # Download zsh plugins
 # 
 ln -s $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
