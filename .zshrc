@@ -38,8 +38,8 @@ export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
 
 # Plugins
-source ~/.config/.zsh/plugins/zsh-autosuggestions.zsh
-#source ~/.config/.zsh/plugins/zsh-syntax-highlighting.plugin.zsh
+source ~/.config/zsh/zsh-autosuggestions.zsh
+#source ~/.config/zsh/zsh-syntax-highlighting.plugin.zsh
 
 # Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"
