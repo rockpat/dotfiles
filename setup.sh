@@ -36,7 +36,7 @@ install_dependencies() {
 }
 
 install_plugins() {
-	curl -sSLO "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/blob/master/zsh-autosuggestions.zsh
+	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/blob/master/zsh-autosuggestions.zsh
 }
 
 create_symlinks() {
