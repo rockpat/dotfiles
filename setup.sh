@@ -23,6 +23,9 @@ install_dependencies() {
         sudo dnf install -y neovim git zsh zoxide bat
     elif command -v xbps-install &> /dev/null; then
         sudo xbps-install -S neovim git zsh zoxide bat
+    elif command -v zypper &> /dev/null; then
+        sudo zypper refresh
+        sudo zypper install -y neovim git zsh zoxide bat
     elif command -v brew &> /dev/null; then
         brew update
         brew install neovim git zoxide bat
