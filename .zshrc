@@ -41,5 +41,5 @@ export MANPAGER="nvim +Man!"
 source ~/.config/.zsh/plugins/zsh-autosuggestions.zsh
 #source ~/.config/.zsh/plugins/zsh-syntax-highlighting.plugin.zsh
 
-# Zoxide initialation
+# Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"
