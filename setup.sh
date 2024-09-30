@@ -31,7 +31,7 @@ install_dependencies() {
         brew update
         brew install neovim git zoxide bat
     else
-        echo "Package manager not found. Please install required programs & dependencies manually."
+        echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
 }
 
@@ -55,4 +55,4 @@ create_symlinks
 
 echo "Setup completed!"
 
-# ToDo: add ZSH Plugins! Don't Hardcoded directory (for Symlinking)
+# ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Make this script FULLY POSIX-Compliant to support BSD's
