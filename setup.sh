@@ -36,6 +36,7 @@ install_dependencies() {
 }
 
 install_plugins() {
+	mkdir $HOME/.config/zsh
 	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/blob/master/zsh-autosuggestions.zsh
 }
 
@@ -44,6 +45,7 @@ create_symlinks() {
 	ln -s $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
 
 	# Just Symlinks (Fastfetch, ViTetris, etc)
+	mkdir $HOME/.config/fastfetch/
 	ln -s $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
 	ln -s $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
 }
