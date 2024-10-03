@@ -16,20 +16,20 @@ echo -ne "
 install_dependencies() {
     if command -v apt-get &> /dev/null; then
         sudo apt-get update
-        sudo apt-get install -y neovim git zsh zoxide bat
+        sudo apt-get install -y neovim git curl zsh zoxide bat
     elif command -v pacman &> /dev/null; then
         sudo pacman -Syu --noconfirm
-        sudo pacman -S --noconfirm neovim git zsh zoxide bat
+        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat
     elif command -v dnf &> /dev/null; then
-        sudo dnf install -y neovim git zsh zoxide bat
+        sudo dnf install -y neovim git curl zsh zoxide bat
     elif command -v xbps-install &> /dev/null; then
-        sudo xbps-install -S neovim git zsh zoxide bat
+        sudo xbps-install -S neovim git curl zsh zoxide bat
     elif command -v zypper &> /dev/null; then
         sudo zypper refresh
-        sudo zypper install -y neovim git zsh zoxide bat
+        sudo zypper install -y neovim git curl zsh zoxide bat
     elif command -v brew &> /dev/null; then
         brew update
-        brew install neovim git zoxide bat
+        brew install neovim git curl zoxide bat
     else
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
@@ -37,7 +37,7 @@ install_dependencies() {
 
 install_plugins() {
 	mkdir $HOME/.config/zsh
-	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/blob/master/zsh-autosuggestions.zsh
+	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
 }
 
 create_symlinks() {
