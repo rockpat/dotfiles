@@ -29,7 +29,7 @@ install_dependencies() {
         sudo zypper install -y neovim git curl zsh zoxide bat
     elif command -v brew &> /dev/null; then
         brew update
-        brew install neovim git curl zoxide bat
+        brew install neovim zoxide bat fastfetch
     else
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
