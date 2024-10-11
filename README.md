@@ -21,9 +21,10 @@ cd ~/Github/dotfiles
 
 ## Documentation
 
-- .bashrc - My almost (Unmodified) .bashrc
-- .zshrc - My .zshrc config that I use
-- .vitetris - My 1Player ViTetris config
-- config.jsonc - My (basic) fastfetch config
-- fastfetch-autocompile - a little script to make compile fastfetch much easier
-- /ventoy - Drop in Black-Ventoy Grub-theme
+- .bashrc                   -   My almost Unmodified .bashrc
+- .zshrc                    -   My simple but powerful .zshrc config that I use
+- .vitetris                 -   My 2Player ViTetris config
+- setup.sh                  -   My script to Automatically setup the Dotfiles
+- config.jsonc              -   My (basic) fastfetch config
+- fastfetch-autocompile.sh  -   A little script to make compiling fastfetch much easier
+- /ventoy                   -   A Drop in Black-Ventoy Grub-theme

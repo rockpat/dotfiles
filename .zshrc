@@ -43,3 +43,5 @@ source ~/.config/zsh/zsh-autosuggestions.zsh
 
 # Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"
+
+# ToDo: 1. Make autocompletion better, 2. Add Git Info (branch) to Prompt & 3. Get zsh-syntax-highlighting to work.
