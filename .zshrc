@@ -32,10 +32,11 @@ alias la='ls -A'
 alias cp="cp -i"
 alias bat='batcat'
 
-# Editors / Export
+# Editors / Exports / Paths
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Plugins
 source ~/.config/zsh/zsh-autosuggestions.zsh
