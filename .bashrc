@@ -54,6 +54,7 @@ xterm*|rxvt*)
 esac
 
 # Aliases
+alias tree='tree -C'
 alias ls='ls --color=auto'
 alias ll='ls -lhA'
 alias la='ls -A'

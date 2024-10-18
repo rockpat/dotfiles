@@ -26,6 +26,7 @@ _comp_options+=(globdots)	# Include hidden files
 PS1=$'\033[36m%n\033[m@\033[32m%m:\033[33;1m%~\033[m\$ '
 
 # Alias
+alias tree='tree -C'
 alias ls='ls --color=auto'
 alias ll='ls -lhA'
 alias la='ls -A'
