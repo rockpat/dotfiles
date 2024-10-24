@@ -41,7 +41,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Plugins
 source ~/.config/zsh/zsh-autosuggestions.zsh
-#source ~/.config/zsh/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"
