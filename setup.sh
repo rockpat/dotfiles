@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-echo -ne "
+echo " 
 -----------------------------------------------------------------------------------------------------
        ██╗ █████╗ ██╗  ██╗██╗   ██╗██████╗     ██╗    ██╗██╗███████╗██╗      ██████╗  ██████╗██╗  ██╗
        ██║██╔══██╗██║ ██╔╝██║   ██║██╔══██╗    ██║    ██║██║██╔════╝██║     ██╔═══██╗██╔════╝██║  ██║
@@ -14,20 +14,20 @@ echo -ne "
 "
 
 install_dependencies() {
-    if command -v apt-get &> /dev/null; then
+    if which apt-get &> /dev/null; then
         sudo apt-get update
         sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
-    elif command -v pacman &> /dev/null; then
+    elif which pacman &> /dev/null; then
         sudo pacman -Syu --noconfirm
         sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting
-    elif command -v dnf &> /dev/null; then
+    elif which dnf &> /dev/null; then
         sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
-    elif command -v xbps-install &> /dev/null; then
+    elif which xbps-install &> /dev/null; then
         sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting
-    elif command -v zypper &> /dev/null; then
+    elif which zypper &> /dev/null; then
         sudo zypper refresh
         sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
-    elif command -v brew &> /dev/null; then
+    elif which brew &> /dev/null; then
         brew update
         brew install neovim zoxide bat fastfetch zsh-syntax-highlighting
     else
@@ -55,4 +55,4 @@ create_symlinks
 
 echo "Setup completed!"
 
-# ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Make this script FULLY POSIX-Compliant to support BSD's
+# ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Add Colours ;-) 
