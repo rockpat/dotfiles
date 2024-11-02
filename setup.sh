@@ -41,6 +41,7 @@ delete_existing() {
 	sudo rm $HOME/.bashrc
 	sudo rm $HOME/.zshrc
 	sudo rm $HOME/.config/fastfetch/config.jsonc
+	sudo rm $HOME/.vitetris
 }	
 
 install_plugins() {
