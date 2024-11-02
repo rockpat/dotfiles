@@ -46,4 +46,5 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"
 
-# ToDo: 1. Make autocompletion better, 2. Add Git Info (branch) to Prompt & 3. Get zsh-syntax-highlighting to work.
+# ToDo: 1. Make autocompletion better, 2. Add Git Info (branch) to Prompt & 3. Get zsh-syntax-highlighting to work cross-platform.
+# 3. Arch Path: /usr/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh, Brew Path: $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh, Debian Path: /|\

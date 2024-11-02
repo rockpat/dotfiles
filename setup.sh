@@ -21,9 +21,11 @@ install_dependencies() {
         sudo pacman -Syu --noconfirm
         sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting
     elif which dnf &> /dev/null; then
+	sudo dnf update
         sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
     elif which xbps-install &> /dev/null; then
-        sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting
+        sudo xbps-install -Su
+	sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting
     elif which zypper &> /dev/null; then
         sudo zypper refresh
         sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
@@ -34,6 +36,12 @@ install_dependencies() {
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
 }
+
+delete_existing() {
+	sudo rm $HOME/.bashrc
+	sudo rm $HOME/.zshrc
+	sudo rm $HOME/.config/fastfetch/config.jsonc
+}	
 
 install_plugins() {
 	mkdir $HOME/.config/zsh
@@ -48,11 +56,16 @@ create_symlinks() {
 	ln -s $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
 }
 
+install_finish() {
+	sudo chsh -s /bin/zsh
+	echo "Setup completed!"
+}
+
 # Main script execution
 install_dependencies
+delete_existing
 install_plugins
 create_symlinks
-
-echo "Setup completed!"
+install_finish
 
 # ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Add Colours ;-) 
