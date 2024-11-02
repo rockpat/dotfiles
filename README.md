@@ -3,9 +3,9 @@
 It's installing the needed programs & dependencies in a Unix & Linux Distro-agnostic way, btw.
 
 **Currently Supported Operating Systems:** 
-Linux: *Debian, Arch, Fedora, OpenSUSE, Voidlinux & all there derivatives.*
-MacOS: *with BREW installed.*
-BSD's: *Full support comming soon. (Symlinks work, but packages need to be installed manually)*
+- Linux: *Debian, Arch, Fedora, OpenSUSE, Voidlinux & all there derivatives.*
+- MacOS: *with BREW installed.*
+- BSD's: *Full support comming soon. (Symlinks work, but packages need to be installed manually)*
 
 *Note: If you're running Gentoo or any other Linux Distobution with a differant package-manager & know the packages, feel free to contribute.*
 
