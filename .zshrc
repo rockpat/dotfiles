@@ -27,6 +27,8 @@ PS1=$'\033[36m%n\033[m@\033[32m%m:\033[33;1m%~\033[m\$ '
 
 # Alias
 alias tree='tree -C'
+alias grep='grep --color'
+alias dir='dir --color'
 alias ls='ls --color=auto'
 alias ll='ls -lhA'
 alias la='ls -A'
@@ -47,4 +49,3 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(zoxide init zsh)"
 
 # ToDo: 1. Make autocompletion better, 2. Add Git Info (branch) to Prompt & 3. Get zsh-syntax-highlighting to work cross-platform.
-# 3. Arch Path: /usr/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh, Brew Path: $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh, Debian Path: /|\
