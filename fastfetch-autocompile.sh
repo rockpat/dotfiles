@@ -21,17 +21,12 @@ tar -xf fastfetch-*.tar
 cd fastfetch-*/
 
 # Download Build-dependancies
-
-install_dependencies() {
-    if which apt-get &> /dev/null; then
-        sudo apt-get update
-        sudo apt-get install -y cmake 
-    else
-        echo "Package manager not supported. Please install required programs & dependencies manually."
-    fi
-}
-
-install_dependencies
+if which apt-get &> /dev/null; then
+    sudo apt-get update
+    sudo apt-get install -y cmake 
+else
+    echo "Package manager not supported. Please install required programs & dependencies manually."
+fi
 
 # Compiling
 sudo cmake .
