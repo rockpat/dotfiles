@@ -37,24 +37,17 @@ install_dependencies() {
     fi
 }
 
-delete_existing() {
-	sudo rm $HOME/.bashrc
-	sudo rm $HOME/.zshrc
-	sudo rm $HOME/.config/fastfetch/config.jsonc
-	sudo rm $HOME/.vitetris
-}	
-
 install_plugins() {
 	mkdir $HOME/.config/zsh
 	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
 }
 
 create_symlinks() {
-	ln -s $HOME/Github/dotfiles/.bashrc $HOME/.bashrc
-	ln -s $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
+	ln -sf $HOME/Github/dotfiles/.bashrc $HOME/.bashrc
+	ln -sf $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
 	mkdir $HOME/.config/fastfetch/
-	ln -s $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
-	ln -s $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
+	ln -sf $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
+	ln -sf $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
 }
 
 install_finish() {
@@ -64,7 +57,6 @@ install_finish() {
 
 # Main script execution
 install_dependencies
-delete_existing
 install_plugins
 create_symlinks
 install_finish
