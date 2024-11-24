@@ -1,4 +1,14 @@
-# My Dotfiles :-)
+```
+M"""""`'"""`YM             M""""""'YMM            dP   .8888b oo dP                   
+M  mm.  mm.  M             M  mmmm. `M            88   88   "    88                   
+M  MMM  MMM  M dP    dP    M  MMMMM  M .d8888b. d8888P 88aaa  dP 88 .d8888b. .d8888b. 
+M  MMM  MMM  M 88    88    M  MMMMM  M 88'  `88   88   88     88 88 88ooood8 Y8ooooo. 
+M  MMM  MMM  M 88.  .88    M  MMMM' .M 88.  .88   88   88     88 88 88.  ...       88 
+M  MMM  MMM  M `8888P88    M       .MM `88888P'   dP   dP     dP dP `88888P' `88888P' 
+MMMMMMMMMMMMMM      .88    MMMMMMMMMMM                                                
+                d8888P                                                                
+```
+
 **An automated symlink script is included!** *Though for the time being it's Hardcoded to be located & run from `$HOME/Github/dotfiles`!*
 It's installing the needed programs & dependencies in a Unix & Linux Distro-agnostic way, btw.
 
