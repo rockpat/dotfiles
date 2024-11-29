@@ -32,7 +32,8 @@ alias dir='dir --color'
 alias ls='ls --color=auto'
 alias ll='ls -lhA'
 alias la='ls -A'
-alias cp="cp -i"
+alias cp="cp -iv"
+alias mv="mv -iv"
 alias bat='batcat'
 
 # Editors / Exports / Paths
@@ -44,6 +45,11 @@ export PATH="$HOME/.local/bin:$PATH"
 # Plugins
 source ~/.config/zsh/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.config/zsh/zsh-history-substring-search.zsh
+
+# Plugin Configuration (zsh-history-substring-search)
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
 
 # Zoxide initialation (ZSH because this is a .zshrc config)
 eval "$(zoxide init zsh)"

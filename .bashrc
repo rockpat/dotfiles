@@ -58,7 +58,8 @@ alias tree='tree -C'
 alias ls='ls --color=auto'
 alias ll='ls -lhA'
 alias la='ls -A'
-alias cp="cp -i"
+alias cp="cp -iv"
+alias mv="mv -iv"
 alias bat='batcat'
 
 # enable programmable completion features (you don't need to enable

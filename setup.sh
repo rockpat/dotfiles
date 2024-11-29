@@ -40,6 +40,7 @@ install_dependencies() {
 install_plugins() {
 	mkdir $HOME/.config/zsh
 	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
+	#curl -sSLo "$HOME/.config/zsh/zsh-history-substring-search.zsh" https://github.com/zsh-users/zsh-history-substring-search/raw/master/zsh-history-substring-search.zsh
 }
 
 create_symlinks() {
