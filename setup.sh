@@ -52,7 +52,7 @@ create_symlinks() {
 }
 
 install_finish() {
-	sudo chsh -s /bin/zsh
+	sudo chsh -s $USER /bin/zsh
 	echo "Setup completed!"
 }
 

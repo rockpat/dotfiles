@@ -33,8 +33,8 @@ sudo cmake .
 sudo cmake --build . --target fastfetch -j$(nproc)
 
 # Replacing old fastfetch binary & man-page
-sudo mv fastfetch /usr/bin
-sudo mv fastfetch.1 /usr/share/man/man1
+sudo mv -v fastfetch /usr/bin
+sudo mv -v fastfetch.1 /usr/share/man/man1
 
 echo "Finished :-)"
 
