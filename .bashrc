@@ -54,13 +54,7 @@ xterm*|rxvt*)
 esac
 
 # Aliases
-alias tree='tree -C'
-alias ls='ls --color=auto'
-alias ll='ls -lhA'
-alias la='ls -A'
-alias cp="cp -iv"
-alias mv="mv -iv"
-alias bat='batcat'
+source ~/Github/dotfiles/shell/aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
