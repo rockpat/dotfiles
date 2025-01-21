@@ -16,22 +16,22 @@ echo "
 install_dependencies() {
     if which apt-get &> /dev/null; then
         sudo apt-get update
-        sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
+        sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which pacman &> /dev/null; then
         sudo pacman -Syu --noconfirm
-        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting
+        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which dnf &> /dev/null; then
 	sudo dnf update
-        sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
+        sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which xbps-install &> /dev/null; then
         sudo xbps-install -Su
-	sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting
+	sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which zypper &> /dev/null; then
         sudo zypper refresh
-        sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting
+        sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which brew &> /dev/null; then
         brew update
-        brew install neovim zoxide bat fastfetch zsh-syntax-highlighting
+        brew install neovim zoxide bat fastfetch zsh-syntax-highlighting tealdear
     else
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
