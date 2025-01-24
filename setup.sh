@@ -14,6 +14,10 @@ echo "
 "
 
 install_dependencies() {
+    if [ "$UID" != "0" ]; then         
+	    echo "This script requires YOU to be a NORMAL USER, NOT ROOT!"
+        exit 1
+    elif
     if which apt-get &> /dev/null; then
         sudo apt-get update
         sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
@@ -21,11 +25,11 @@ install_dependencies() {
         sudo pacman -Syu --noconfirm
         sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which dnf &> /dev/null; then
-	sudo dnf update
+        sudo dnf update
         sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which xbps-install &> /dev/null; then
         sudo xbps-install -Su
-	sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
     elif which zypper &> /dev/null; then
         sudo zypper refresh
         sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
@@ -38,28 +42,34 @@ install_dependencies() {
 }
 
 install_plugins() {
-	mkdir $HOME/.config/zsh
-	curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
-	#curl -sSLo "$HOME/.config/zsh/zsh-history-substring-search.zsh" https://github.com/zsh-users/zsh-history-substring-search/raw/master/zsh-history-substring-search.zsh
+    mkdir $HOME/.config/zsh
+    curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
+    #curl -sSLo "$HOME/.config/zsh/zsh-history-substring-search.zsh" https://github.com/zsh-users/zsh-history-substring-search/raw/master/zsh-history-substring-search.zsh
 }
 
 create_symlinks() {
 	ln -sf $HOME/Github/dotfiles/.bashrc $HOME/.bashrc
-	ln -sf $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
+  	ln -sf $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
 	mkdir $HOME/.config/fastfetch/
 	ln -sf $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
 	ln -sf $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
 }
 
 install_finish() {
-	sudo chsh -s $USER /bin/zsh
-	echo "Setup completed!"
+    	sudo chsh -s $USER /bin/zsh # This method doesn't work, you have to change the /etc/passwd login shell to zsh
+    	echo "Setup completed!"
 }
 
-# Main script execution
-install_dependencies
-install_plugins
-create_symlinks
-install_finish
+
+# Where the REAL Magic happens ;-)
+
+if [ "$UID" == "0" ]; then
+    	install_dependencies
+    	install_plugins
+    	create_symlinks
+    	install_finish
+else
+    echo "This script requires YOU to be a NORMAL USER, NOT ROOT!"
+fi
 
 # ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Add Colours ;-) 
