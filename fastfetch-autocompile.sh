@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "
 -----------------------------------------------------------------------------------------------------
@@ -13,6 +13,13 @@ echo "
 -----------------------------------------------------------------------------------------------------
 "
 
+# Permissions ;-) (sudo or not) # Including Bashisms?
+if [ "$UID" = 1000 ]; then         
+	PRIVILEGES="sudo"
+elif [ "${UID}" -ne 0 ]; then 
+	PRIVILEGES=""
+fi
+
 # Download the newest releases source code in .tar.gz form for the time being.
 #baseurl="https://github.com/fastfetch-cli/fastfetch/releases"
 #ver=$(basename "$(curl -w "%{url_effective}\n" -I -L -s -S $baseurl/latest -o /dev/null)")
@@ -25,19 +32,19 @@ cd fastfetch-*/
 
 # Download Build-dependancies
 if which apt-get &> /dev/null; then
-    sudo apt-get update
-    sudo apt-get install -y cmake 
+	$PRIVILEGES apt-get update
+	$PRIVILEGES apt-get install -y cmake pkg-config build-essential 
 else
     echo "Package manager not supported. Please install required programs & dependencies manually."
 fi
 
 # Compiling
-sudo cmake .
-sudo cmake --build . --target fastfetch -j$(nproc)
+$PRIVILEGES cmake .
+$PRIVILEGES cmake --build . --target fastfetch -j$(nproc)
 
 # Replacing old fastfetch binary & manual page
-sudo mv -v fastfetch /usr/bin
-sudo mv -v fastfetch.1 /usr/share/man/man1
+$PRIVILEGES mv -v fastfetch /usr/bin
+$PRIVILEGES mv -v fastfetch.1 /usr/share/man/man1
 
 echo "Finished :-)"
 
