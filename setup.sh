@@ -38,7 +38,7 @@ install_dependencies() {
 }
 
 install_plugins() {
-    mkdir $HOME/.config/zsh
+    mkdir -p $HOME/.config/zsh
     curl -sSLo "$HOME/.config/zsh/zsh-autosuggestions.zsh" https://github.com/zsh-users/zsh-autosuggestions/raw/master/zsh-autosuggestions.zsh
     #curl -sSLo "$HOME/.config/zsh/zsh-history-substring-search.zsh" https://github.com/zsh-users/zsh-history-substring-search/raw/master/zsh-history-substring-search.zsh
 }
@@ -46,13 +46,13 @@ install_plugins() {
 create_symlinks() {
 	ln -sf $HOME/Github/dotfiles/.bashrc $HOME/.bashrc
   	ln -sf $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
-	mkdir $HOME/.config/fastfetch/
+	mkdir -p $HOME/.config/fastfetch/
 	ln -sf $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
 	ln -sf $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
 }
 
 install_finish() {
-    	sudo chsh -s $USER /bin/zsh # This method doesn't work, you have to change the /etc/passwd login shell to zsh
+    	# sudo chsh -s $USER /bin/zsh ### This method doesn't work, you have to change the /etc/passwd login shell to zsh
     	echo "Setup completed!"
 }
 
