@@ -14,28 +14,24 @@ echo "
 "
 
 install_dependencies() {
-    if [ "$UID" != "0" ]; then         
-	    echo "This script requires YOU to be a NORMAL USER, NOT ROOT!"
-        exit 1
-    elif
     if which apt-get &> /dev/null; then
         sudo apt-get update
-        sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which pacman &> /dev/null; then
         sudo pacman -Syu --noconfirm
-        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which dnf &> /dev/null; then
         sudo dnf update
-        sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which xbps-install &> /dev/null; then
         sudo xbps-install -Su
-        sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which zypper &> /dev/null; then
         sudo zypper refresh
-        sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdear
+        sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which brew &> /dev/null; then
         brew update
-        brew install neovim zoxide bat fastfetch zsh-syntax-highlighting tealdear
+        brew install neovim zoxide bat fastfetch zsh-syntax-highlighting tealdeer
     else
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
@@ -63,13 +59,9 @@ install_finish() {
 
 # Where the REAL Magic happens ;-)
 
-if [ "$UID" == "0" ]; then
-    	install_dependencies
-    	install_plugins
-    	create_symlinks
-    	install_finish
-else
-    echo "This script requires YOU to be a NORMAL USER, NOT ROOT!"
-fi
+install_dependencies
+install_plugins
+create_symlinks
+install_finish
 
 # ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Add Colours ;-) 
