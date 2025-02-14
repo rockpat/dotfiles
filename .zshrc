@@ -26,7 +26,9 @@ _comp_options+=(globdots)	# Include hidden files
 PS1=$'\033[36m%n\033[m@\033[32m%m:\033[33;1m%~\033[m\$ '
 
 # Alias
-source ~/Github/dotfiles/shell/aliases
+if [ -f "$HOME/Github/dotfiles/shell/aliases" ]; then
+	. "$HOME/Github/dotfiles/shell/aliases"
+fi
 
 # Editors / Exports / Paths
 export VISUAL=vim

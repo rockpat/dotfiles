@@ -54,7 +54,9 @@ xterm*|rxvt*)
 esac
 
 # Aliases
-source ~/Github/dotfiles/shell/aliases
+if [ -f "$HOME/Github/dotfiles/shell/aliases" ]; then
+	. "$HOME/Github/dotfiles/shell/aliases"
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
