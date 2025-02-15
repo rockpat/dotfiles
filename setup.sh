@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -e
 
 echo " 
 -----------------------------------------------------------------------------------------------------
@@ -15,20 +15,20 @@ echo "
 
 install_dependencies() {
     if which apt-get &> /dev/null; then
-        sudo apt-get update
-        sudo apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES apt-get update
+        $PRIVILEGES apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which pacman &> /dev/null; then
-        sudo pacman -Syu --noconfirm
-        sudo pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES pacman -Syu --noconfirm
+        $PRIVILEGES pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which dnf &> /dev/null; then
-        sudo dnf update
-        sudo dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES dnf update
+        $PRIVILEGES dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which xbps-install &> /dev/null; then
-        sudo xbps-install -Su
-        sudo xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES xbps-install -Su
+        $PRIVILEGES xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which zypper &> /dev/null; then
-        sudo zypper refresh
-        sudo zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES zypper refresh
+        $PRIVILEGES zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
     elif which brew &> /dev/null; then
         brew update
         brew install neovim zoxide bat fastfetch zsh-syntax-highlighting tealdeer
@@ -49,19 +49,26 @@ create_symlinks() {
 	mkdir -p $HOME/.config/fastfetch/
 	ln -sf $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
 	ln -sf $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
+	ln -sf $HOME/Github/dotfiles/btop.conf $HOME/.config/btop/btop.conf
 }
 
 install_finish() {
-    	# sudo chsh -s $USER /bin/zsh ### This method doesn't work, you have to change the /etc/passwd login shell to zsh
+    	# $PRIVILEGES chsh -s $USER /bin/zsh ### This method doesn't work, you have to change the /etc/passwd login shell to zsh
+	tldr --update # Cache for tealdeer ;-)
     	echo "Setup completed!"
 }
 
 
 # Where the REAL Magic happens ;-)
 
+case "$(whoami)" in
+  root) PRIVILEGES="" ;;
+  *) PRIVILEGES="sudo" ;;
+esac
+
 install_dependencies
 install_plugins
 create_symlinks
 install_finish
 
-# ToDo: 1. Don't Hardcode directory (for Symlinking), 2. Add Uninstall flag, 3. Add Colours ;-) 
+# ToDo: 1. Fix ZSH autosuggestions differant locations, 2. Don't Hardcode directory (for Symlinking), 3. Add Uninstall flag, 4. Add Colours ;-) 
