@@ -13,7 +13,7 @@ alias \
 	tree='tree -C' \
 	grep='grep --color' \
 	dir='dir --color' \
-	ls='ls --color=auto' \
+	ls='ls --color' \
 	ll='ls -lhA' \
 	la='ls -A' \
 	cp="cp -iv" \
