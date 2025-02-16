@@ -10,7 +10,7 @@
 #-----------------------------------------------------------------------------------------------------
 
 # History + Vim Keybindings
-HISTFILE=~/.zsh_history
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
 HISTSIZE=99999
 SAVEHIST=99999
 bindkey -v

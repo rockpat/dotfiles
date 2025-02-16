@@ -18,6 +18,7 @@ case $- in
 esac
 
 # Histfile & Histfiles settings
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/bash/history"
 HISTSIZE=99999
 HISTFILESIZE=99999
 HISTCONTROL=ignoreboth
