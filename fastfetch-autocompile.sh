@@ -46,6 +46,11 @@ $PRIVILEGES cmake --build . --target fastfetch -j$(nproc)
 $PRIVILEGES mv -v fastfetch /usr/bin
 $PRIVILEGES mv -v fastfetch.1 /usr/share/man/man1
 
-echo "Finished :-)"
+echo "
+▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖ ▗▄▄▖▗▖ ▗▖▗▄▄▄▖▗▄▄▄ 
+▐▌     █  ▐▛▚▖▐▌  █  ▐▌   ▐▌ ▐▌▐▌   ▐▌  █
+▐▛▀▀▘  █  ▐▌ ▝▜▌  █   ▝▀▚▖▐▛▀▜▌▐▛▀▀▘▐▌  █
+▐▌   ▗▄█▄▖▐▌  ▐▌▗▄█▄▖▗▄▄▞▘▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀
+"
 
 # ToDo: 1. Add Build-dependancies, 2. Download newest Fastfetch source code automaticly
