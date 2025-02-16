@@ -44,18 +44,30 @@ install_plugins() {
 }
 
 create_symlinks() {
-	ln -sf $HOME/Github/dotfiles/.bashrc $HOME/.bashrc
-  	ln -sf $HOME/Github/dotfiles/.zshrc $HOME/.zshrc
+	echo "Symlinking Dotfiles!"
+	ln -vsf "$DIRECTORY/".bashrc $HOME/.bashrc
+  	ln -vsf "$DIRECTORY/".zshrc $HOME/.zshrc
 	mkdir -p $HOME/.config/fastfetch/
-	ln -sf $HOME/Github/dotfiles/fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
-	ln -sf $HOME/Github/dotfiles/.vitetris $HOME/.vitetris
-	ln -sf $HOME/Github/dotfiles/btop.conf $HOME/.config/btop/btop.conf
+	ln -vsf "$DIRECTORY/"fastfetch/config.jsonc $HOME/.config/fastfetch/config.jsonc
+	ln -vsf "$DIRECTORY/".vitetris $HOME/.vitetris
+	ln -vsf "$DIRECTORY/"btop.conf $HOME/.config/btop/btop.conf
 }
 
 install_finish() {
     	# $PRIVILEGES chsh -s $USER /bin/zsh ### This method doesn't work, you have to change the /etc/passwd login shell to zsh
 	tldr --update # Cache for tealdeer ;-)
-    	echo "Setup completed!"
+	echo "
+**********************************************************************************************************************************
+*                                                                                                                                *
+*   ███████╗███████╗████████╗██╗   ██╗██████╗     ██████╗ ██████╗ ███╗   ███╗██████╗ ██╗     ███████╗████████╗███████╗██████╗    *
+*   ██╔════╝██╔════╝╚══██╔══╝██║   ██║██╔══██╗   ██╔════╝██╔═══██╗████╗ ████║██╔══██╗██║     ██╔════╝╚══██╔══╝██╔════╝██╔══██╗   *
+*   ███████╗█████╗     ██║   ██║   ██║██████╔╝   ██║     ██║   ██║██╔████╔██║██████╔╝██║     █████╗     ██║   █████╗  ██║  ██║   *
+*   ╚════██║██╔══╝     ██║   ██║   ██║██╔═══╝    ██║     ██║   ██║██║╚██╔╝██║██╔═══╝ ██║     ██╔══╝     ██║   ██╔══╝  ██║  ██║   *
+*   ███████║███████╗   ██║   ╚██████╔╝██║        ╚██████╗╚██████╔╝██║ ╚═╝ ██║██║     ███████╗███████╗   ██║   ███████╗██████╔╝   *
+*   ╚══════╝╚══════╝   ╚═╝    ╚═════╝ ╚═╝         ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚══════╝╚══════╝   ╚═╝   ╚══════╝╚═════╝    *
+*                                                                                                                                *
+**********************************************************************************************************************************
+	"
 }
 
 
@@ -65,6 +77,8 @@ case "$(whoami)" in
   root) PRIVILEGES="" ;;
   *) PRIVILEGES="sudo" ;;
 esac
+
+DIRECTORY="$HOME/Github/dotfiles"
 
 install_dependencies
 install_plugins
