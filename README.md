@@ -17,7 +17,7 @@ It's installing the needed programs & dependencies in a Unix & Linux Distro-agno
 - MacOS: *with BREW installed.*
 - BSD's: *Full support comming soon. (Symlinks work, but packages need to be installed manually)*
 
-*Note: If you're running Gentoo or any other Linux Distobution with a differant package-manager & know the packages, feel free to contribute.*
+*Note: If you're running Gentoo or any other Linux Distribution with a differant package-manager & know the packages, feel free to contribute.*
 
 This Repository stores my dotfiles & some random scripts I use often like the Fastfetch Autocompile one :-)
 But other than that, I don't have anything of value to add besides that automation & scripts are BASED.
@@ -32,7 +32,7 @@ cd ~/Github/dotfiles
 ./setup.sh
 ```
 
-**Btw, you might need to install git and/or create $HOME/Github/dotfiles directory before!**
+**Btw, you might need to install git and/or create the $HOME/Github/dotfiles directory before!**
 
 ## Documentation
 
@@ -40,6 +40,7 @@ cd ~/Github/dotfiles
 - .zshrc                    -   My simple but powerful .zshrc config that I use
 - .vitetris                 -   My 2Player vitetris config
 - setup.sh                  -   My script to Automatically setup the Dotfiles
-- config.jsonc              -   My (basic) fastfetch config
+- /fastfetch/config.jsonc   -   My (basic) fastfetch config
+- btop.conf                 -   My btop config
 - fastfetch-autocompile.sh  -   A little script to make compiling fastfetch much easier
 - /ventoy                   -   A Drop in Black-Ventoy Grub-theme

@@ -13,9 +13,15 @@ alias \
 	tree='tree -C' \
 	grep='grep --color' \
 	dir='dir --color' \
-	ls='ls --color' \
-	ll='ls -lhA' \
+	ls='eza -@'\
 	la='ls -A' \
+	ll='ls -lA' \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	bat='batcat'
+
+# LS ALIASES
+#	ls='ls --color -F' \
+#	ll='ls -lhA' \
+#	la='ls -A' \
+

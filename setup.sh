@@ -16,22 +16,22 @@ echo "
 install_dependencies() {
     if which apt-get &> /dev/null; then
         $PRIVILEGES apt-get update
-        $PRIVILEGES apt-get install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES apt-get install -y neovim git curl zsh zoxide bat eza zsh-syntax-highlighting tealdeer btop
     elif which pacman &> /dev/null; then
         $PRIVILEGES pacman -Syu --noconfirm
-        $PRIVILEGES pacman -S --noconfirm neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES pacman -S --noconfirm neovim git curl zsh zoxide bat eza zsh-syntax-highlighting tealdeer btop
     elif which dnf &> /dev/null; then
         $PRIVILEGES dnf update
-        $PRIVILEGES dnf install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES dnf install -y neovim git curl zsh zoxide bat eza zsh-syntax-highlighting tealdeer btop
     elif which xbps-install &> /dev/null; then
         $PRIVILEGES xbps-install -Su
-        $PRIVILEGES xbps-install -S neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES xbps-install -S neovim git curl zsh zoxide bat eza zsh-syntax-highlighting tealdeer btop
     elif which zypper &> /dev/null; then
         $PRIVILEGES zypper refresh
-        $PRIVILEGES zypper install -y neovim git curl zsh zoxide bat zsh-syntax-highlighting tealdeer
+        $PRIVILEGES zypper install -y neovim git curl zsh zoxide bat eza zsh-syntax-highlighting tealdeer btop
     elif which brew &> /dev/null; then
         brew update
-        brew install neovim zoxide bat fastfetch zsh-syntax-highlighting tealdeer
+        brew install neovim zoxide bat eza fastfetch zsh-syntax-highlighting tealdeer btop
     else
         echo "Package manager not supported. Please install required programs & dependencies manually."
     fi
