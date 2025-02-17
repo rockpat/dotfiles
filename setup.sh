@@ -56,6 +56,14 @@ create_symlinks() {
 install_finish() {
     	# $PRIVILEGES chsh -s $USER /bin/zsh ### This method doesn't work, you have to change the /etc/passwd login shell to zsh
 	tldr --update # Cache for tealdeer ;-)
+	if [ -f $HOME/.bash_history ]; then
+		mkdir -p $HOME/.cache/bash
+		mv $HOME/.bash_history $HOME/.cache/bash/history
+	fi
+	if [ -f $HOME/.zsh_history ]; then
+		mkdir -p $HOME/.cache/zsh
+		mv $HOME/.zsh_history $HOME/.cache/zsh/history
+	fi
 	echo "
 **********************************************************************************************************************************
 *                                                                                                                                *
