@@ -78,7 +78,6 @@ install_finish() {
 	"
 }
 
-
 # Where the REAL Magic happens ;-)
 
 case "$(whoami)" in
@@ -93,4 +92,4 @@ install_plugins
 create_symlinks
 install_finish
 
-# ToDo: 1. Fix ZSH autosuggestions differant locations, 2. Don't Hardcode directory, 3. Add Uninstall flag, 4. Add Colours ;-), 5. Add sudo/doas detection to $PRIVILEGES ;-) 
+# ToDo: 1. Fix zsh-syntax-highlighting differant locations, 2. Don't Hardcode directory, 3. Add Uninstall flag, 4. Add Colours ;-), 5. Add sudo/doas detection to $PRIVILEGES ;-) 
