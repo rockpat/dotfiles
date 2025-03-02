@@ -21,16 +21,16 @@ elif [ "${UID}" -ne 0 ]; then
 fi
 
 # Download the newest releases source code in .tar.gz form for the time being.
-#baseurl="https://github.com/fastfetch-cli/fastfetch/releases"
-#ver=$(basename "$(curl -w "%{url_effective}\n" -I -L -s -S $baseurl/latest -o /dev/null)")
-#curl -fLO "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.32.1.tar.gz" 
+baseurl="https://github.com/fastfetch-cli/fastfetch/releases"
+ver=$(basename "$(curl -w "%{url_effective}\n" -I -L -s -S $baseurl/latest -o /dev/null)")
+curl -fL "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/$ver.tar.gz" -o "fastfetch-$ver.tar.gz"
 
 # Decompressing, Extracting & Changing Directories.
 gunzip fastfetch-*.tar.gz
 tar -xf fastfetch-*.tar
 cd fastfetch-*/
 
-# Download Build-dependancies
+# Download Build-dependencies
 if which apt-get &> /dev/null; then
 	$PRIVILEGES apt-get update
 	$PRIVILEGES apt-get install -y cmake pkg-config build-essential 
@@ -39,12 +39,11 @@ else
 fi
 
 # Compiling
-$PRIVILEGES cmake .
-$PRIVILEGES cmake --build . --target fastfetch -j$(nproc)
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr 
+cmake --build build -j$(nproc)
 
-# Replacing old fastfetch binary & manual page
-$PRIVILEGES mv -v fastfetch /usr/bin
-$PRIVILEGES mv -v fastfetch.1 /usr/share/man/man1
+# Installing
+$PRIVILEGES cmake --install build
 
 echo "
 ▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖ ▗▄▄▖▗▖ ▗▖▗▄▄▄▖▗▄▄▄ 
@@ -53,4 +52,4 @@ echo "
 ▐▌   ▗▄█▄▖▐▌  ▐▌▗▄█▄▖▗▄▄▞▘▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀
 "
 
-# ToDo: 1. Add Build-dependancies, 2. Download newest Fastfetch source code automaticly
+# ToDo: 1. Add Build-dependencies
