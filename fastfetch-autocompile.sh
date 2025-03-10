@@ -13,14 +13,14 @@ echo "
 -----------------------------------------------------------------------------------------------------
 "
 
-# Permissions ;-) (sudo or not) # Including Bashisms?
+# Permissions ;-) (sudo or not) | Including Bashisms?
 if [ "$UID" = 1000 ]; then         
 	PRIVILEGES="sudo"
 elif [ "${UID}" -ne 0 ]; then 
 	PRIVILEGES=""
 fi
 
-# Download the newest releases source code in .tar.gz form for the time being.
+# Downloading the newest release source code in *.tar.gz form.
 baseurl="https://github.com/fastfetch-cli/fastfetch/releases"
 ver=$(basename "$(curl -w "%{url_effective}\n" -I -L -s -S $baseurl/latest -o /dev/null)")
 curl -fL "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/$ver.tar.gz" -o "fastfetch-$ver.tar.gz"
@@ -39,7 +39,7 @@ else
 fi
 
 # Compiling
-cmake -B build -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr 
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local 
 cmake --build build -j$(nproc)
 
 # Installing
@@ -52,4 +52,4 @@ echo "
 ▐▌   ▗▄█▄▖▐▌  ▐▌▗▄█▄▖▗▄▄▞▘▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀
 "
 
-# ToDo: 1. Add Build-dependencies
+# ToDo: Nothing, for the time being ;-)
