@@ -32,7 +32,8 @@ cd ~/Github/dotfiles
 ./setup.sh
 ```
 
-<p style="color:red;">**Btw, you might need to install `git` and/or create the `$HOME/Github/dotfiles` directory before!**</p>
+**Btw, you might need to install `git` and/or create the `$HOME/Github/dotfiles` directory before!**
+
 ## Documentation
 
 - .bashrc                   -   My almost Unmodified .bashrc
