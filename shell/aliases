@@ -13,15 +13,19 @@ alias \
 	tree='tree -C' \
 	grep='grep --color' \
 	dir='dir --color' \
-	ls='eza -@'\
-	la='ls -A' \
-	ll='ls -lA' \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	bat='batcat'
 
-# LS ALIASES
-#	ls='ls --color -F' \
-#	ll='ls -lhA' \
-#	la='ls -A' \
-
+# LS ALIAS (with Fallback)
+if which eza &> /dev/null; then
+alias \
+	ls='eza -@'\
+	la='ls -A' \
+	ll='ls -lA'
+elif which ls &> /dev/null; then
+alias \
+	ls='ls --color -F' \
+	ll='ls -lhA' \
+	la='ls -A' 
+fi
