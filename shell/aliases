@@ -15,7 +15,8 @@ alias \
 	dir='dir --color' \
 	cp="cp -iv" \
 	mv="mv -iv" \
-	bat='batcat'
+	bat='batcat' \
+	wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'
 
 # LS ALIAS (with Fallback)
 if which eza &> /dev/null; then

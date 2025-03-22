@@ -35,6 +35,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 export MANPAGER="nvim +Man!"
 export PATH="$HOME/.local/bin:$PATH"
+export ZDOTDIR=$HOME/.config/zsh
 
 # Plugins
 source ~/.config/zsh/zsh-autosuggestions.zsh
