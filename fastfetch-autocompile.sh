@@ -33,7 +33,7 @@ cd fastfetch-*/
 # Download Build-dependencies
 if which apt-get &> /dev/null; then
 	$PRIVILEGES apt-get update
-	$PRIVILEGES apt-get install -y cmake pkg-config build-essential 
+	$PRIVILEGES apt-get install -y cmake pkg-config build-essential git curl
 else
     echo "Package manager not supported. Please install required programs & dependencies manually."
 fi
@@ -44,6 +44,10 @@ cmake --build build -j$(nproc)
 
 # Installing
 $PRIVILEGES cmake --install build
+
+# Removing
+cd ..
+$PRIVILEGES rm -r fastfetch-2*
 
 echo "
 ▗▄▄▄▖▗▄▄▄▖▗▖  ▗▖▗▄▄▄▖ ▗▄▄▖▗▖ ▗▖▗▄▄▄▖▗▄▄▄ 
