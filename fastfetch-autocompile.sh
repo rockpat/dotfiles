@@ -56,4 +56,4 @@ echo "
 ▐▌   ▗▄█▄▖▐▌  ▐▌▗▄█▄▖▗▄▄▞▘▐▌ ▐▌▐▙▄▄▖▐▙▄▄▀
 "
 
-# ToDo: Nothing, for the time being ;-)
+# ToDo: Make it POSIX Compliant!

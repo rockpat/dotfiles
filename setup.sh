@@ -92,4 +92,4 @@ install_plugins
 create_symlinks
 install_finish
 
-# ToDo: 1. Fix zsh-syntax-highlighting differant locations, 2. Don't Hardcode directory, 3. Add Uninstall flag, 4. Add Colours ;-), 5. Add sudo/doas detection to $PRIVILEGES ;-) 
+# ToDo: 1. Fix zsh-syntax-highlighting differant locations, 2. Add Uninstall flag (Backup), 3. Add Colours ;-), 4. Add sudo/doas detection to $PRIVILEGES ;-) 
