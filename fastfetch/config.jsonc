@@ -17,6 +17,7 @@
     "font",
     "cpu",
     "gpu",
+    "opengl",
     "memory",
     "localip",
     "battery",
